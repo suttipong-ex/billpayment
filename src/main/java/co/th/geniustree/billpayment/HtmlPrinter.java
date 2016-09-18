@@ -17,12 +17,8 @@ public class HtmlPrinter implements Printer {
         double total = 0;
         System.out.println(bill.getName());
         for (int i = 0; i < bill.getItems().length; i++) {
-            System.out.printf("%d.\t%s\t\t%d\t%.2f\t%.2f\n",
-                    (i + 1),
-                    bill.getItems()[i].name,
-                    bill.getItems()[i].amount,
-                    bill.getItems()[i].qty,
-                    bill.getItems()[i].amount * bill.getItems()[i].qty);
+            System.out.println("<tr> <td>"+(i+1)+"</td> <td>"+bill.getItems()[i].name+"</td> <td>"+bill.getItems()[i].amount+"</td> <td>"+bill.getItems()[i].qty+"</td> "
+                    +"<td>"+bill.getItems()[i].amount * bill.getItems()[i].qty+"</td> </tr>");
             total += bill.getItems()[i].amount * bill.getItems()[i].qty;
         }
         System.out.println("===================== Thanks ===================");

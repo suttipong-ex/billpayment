@@ -17,23 +17,23 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.print(" Cash = ");
         int cash = sc.nextInt();
-        Bill bill = new Bill(items,cash,"==================OBJECT SHOP===================");
+        Bill bill = new Bill(items, cash, "================================================\n\t\t OBJECT SHOP\n================================================");
         Printer print = printerFactory();
         print.print(bill);
     }
 
     private static Printer printerFactory() {
-        return new StandardPrinter();
+        return new HtmlPrinter();
     }
 
     private static Item[] loadData() {
-        Item[] items = new Item[3];
-        Item item1  = new Item("water", 2, 10);
+        Item item1 = new Item("water", 2, 10);
         Item item2 = new Item("soap", 1, 12);
         Item item3 = new Item("bread", 3, 20);
-        items[0] = item1;
-        items[1] = item2;
-        items[2] = item3;
+        Item item4 = new Item("soda", 2, 15);
+        Item item5 = new Item("food", 1, 70);
+        Item item6 = new Item("yom", 1, 90);
+        Item[] items = new Item[]{item1,item2,item3,item4,item5,item6};
         return items;
     }
 }
